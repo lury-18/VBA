@@ -29,9 +29,8 @@ Sub cleantest()
     '=============Put the Original Code====================================
     '======================================================================
     Set pptSlide = pptpres.Slides.Add(pptpres.Slides.Count + 1, 12)
-    lastRow2A = ThisWorkbook.Worksheets("Branch | Scorecard (to65)").Range("C:C").Find("65-69"" Total", LookIn:=xlValues, SearchDirection:=xlPrevious).Row
     
-    Set rangeList2A = ThisWorkbook.Worksheets("Branch | Scorecard (to65)").Range("C4:IW" & lastRow2A).Offset(0, 0)
+    Set rangeList2A = ThisWorkbook.Worksheets("Sheet1").Range("C4:IW" & lastRow2A).Offset(0, 0)
     
     rangeList2A.CopyPicture xlScreen, xlBitmap
     Application.Wait Now + TimeValue("00:00:01")
@@ -50,7 +49,7 @@ Sub cleantest()
     ' Create a new TEXTBOX for SINGLE CELL "COMMENTS!DV10:DV15" which has space row in excel below the 1ST image (distance 10)
     Set shape = pptSlide.Shapes.AddTextbox(1, 0, img.Top + img.Height + 10, 960, 210) ' 1 is msoTextOrientationHorizontal
     
-    shape.TextFrame.TextRange.Text = FindLargestSOGap()
+    shape.TextFrame.TextRange.Text = XXXX()
 
     With shape
         .Fill.ForeColor.RGB = RGB(254, 240, 240)
