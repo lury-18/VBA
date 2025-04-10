@@ -5,13 +5,11 @@ Sub CopySheetWithoutLinks()
 
     Set twb = ThisWorkbook
 
-    Set wb = Workbooks("AHQ PBI LCD TV DASHBOARD (Latest)_PPT automation7_SG_2024_WK11.xlsb")
-    ThisWorkbook.Sheets("Comments-new").Copy After:=wb.Sheets("SELL in_thru Test")
+    Set wb = Workbooks("book1.xlsb")
+    ThisWorkbook.Sheets("Comments-new").Copy After:=wb.Sheets("Sheet1")
     
     
-    'With wb.Sheets("SELL in_thru Test").UsedRange
-    '    .Replace What:="[" & twb.Name & "]", Replacement:="", LookAt:=xlPart
-    'End With
+
     
     For Each Cell In wb.Sheets("Comments-new").UsedRange
         If Cell.HasFormula Then
